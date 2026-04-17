@@ -7,7 +7,9 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import ServicesDropdown from "./ServicesDropdown";
 
-const fontStyle = { fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif" };
+const fontStyle = {
+  fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
+};
 
 export default function Header() {
   const t = useTranslations("header");
@@ -41,7 +43,9 @@ export default function Header() {
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [menuOpen]);
 
   const handleLocaleChange = () => {
@@ -59,11 +63,20 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/#hero" className="flex items-center gap-2 shrink-0" style={fontStyle}>
-            <span className="text-xl font-extrabold tracking-tight" style={{ color: "#FB8C00" }}>
+          <Link
+            href="/#hero"
+            className="flex items-center gap-2 shrink-0"
+            style={fontStyle}
+          >
+            <span
+              className="text-xl font-extrabold tracking-tight"
+              style={{ color: "#FB8C00" }}
+            >
               Siddeley
             </span>
-            <span className="text-xl font-extrabold tracking-tight text-white">Talent Link</span>
+            <span className="text-xl font-extrabold tracking-tight text-white">
+              Talent Link
+            </span>
           </Link>
 
           {/* Desktop nav */}
@@ -105,7 +118,9 @@ export default function Header() {
           <button
             className="md:hidden flex items-center justify-center w-10 h-10 rounded-md text-gray-300 hover:text-white hover:bg-white/10 transition-colors duration-150"
             onClick={() => setMenuOpen((v) => !v)}
-            aria-label={menuOpen ? t("actions.closeMenu") : t("actions.openMenu")}
+            aria-label={
+              menuOpen ? t("actions.closeMenu") : t("actions.openMenu")
+            }
           >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -115,7 +130,9 @@ export default function Header() {
       {/* Mobile drawer overlay */}
       <div
         className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 md:hidden ${
-          menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          menuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
         }`}
         onClick={() => setMenuOpen(false)}
       />
@@ -163,7 +180,10 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  onClick={() => { setMenuOpen(false); setMobileServicesOpen(false); }}
+                  onClick={() => {
+                    setMenuOpen(false);
+                    setMobileServicesOpen(false);
+                  }}
                   className="py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors duration-150"
                   style={fontStyle}
                 >

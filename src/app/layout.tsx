@@ -8,7 +8,7 @@ import {
   Open_Sans,
 } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/home/Header";
+import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import Providers from "@/components/Providers";
 import { NextIntlClientProvider } from "next-intl";
@@ -64,11 +64,11 @@ export default async function RootLayout({
         <NextIntlClientProvider>
           <Providers>
             <Header />
-            <main className="pt-16 flex-1">
-              {children}
-            </main>
+            <main className="pt-16 flex-1">{children}</main>
             <Footer />
-            {googleAnalyticsId ? <GoogleAnalytics gaId={googleAnalyticsId} /> : null}
+            {googleAnalyticsId ? (
+              <GoogleAnalytics gaId={googleAnalyticsId} />
+            ) : null}
           </Providers>
         </NextIntlClientProvider>
       </body>
