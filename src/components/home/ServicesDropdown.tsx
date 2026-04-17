@@ -99,13 +99,13 @@ export default function ServicesDropdown() {
           <div className="flex flex-col justify-between border-r border-white/10 pr-8">
             <div className="flex flex-col gap-4">
               <span
-                className="text-base font-bold text-gray-400"
+                className="text-base font-bold text-[#FB8C00]"
                 style={fontStyle}
               >
                 {t("services.promo.title")}
               </span>
               <p
-                className="text-sm text-gray-600 leading-relaxed"
+                className="text-sm text-gray-300 leading-relaxed"
                 style={fontStyle}
               >
                 {t("services.promo.description")}
