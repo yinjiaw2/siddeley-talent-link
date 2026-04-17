@@ -12,7 +12,10 @@ export default function CompanyDetails() {
   const map = useTranslations("about.map");
 
   return (
-    <section className="w-full py-20 px-6" style={{ backgroundColor: "#F2F1EF" }}>
+    <section
+      className="w-full py-20 px-6"
+      style={{ backgroundColor: "#F2F1EF" }}
+    >
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left — company intro */}
         <div>
@@ -50,10 +53,10 @@ export default function CompanyDetails() {
         </div>
 
         {/* Right — map */}
-        <div className="w-full h-[420px] rounded-2xl overflow-hidden shadow-md">
+        <div className="w-full h-full rounded-2xl overflow-hidden shadow-md">
           <Map
             defaultCenter={OFFICE_POSITION}
-            defaultZoom={17}
+            defaultZoom={8}
             mapId="e04d3dc23484cd2b24cff6b2"
             style={{ width: "100%", height: "100%" }}
           >
