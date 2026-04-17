@@ -16,31 +16,48 @@
     "recruitment": {
       "title": "Recruitment",
       "permanent": "Permanent recruitment",
+      "permanentDesc": "Connect businesses with long-term talent that fits their culture and goals.",
       "temporary": "Temporary recruitment",
+      "temporaryDesc": "Flexible staffing solutions to meet short-term and seasonal workforce demands.",
       "volume": "Volume recruitment",
+      "volumeDesc": "Efficient large-scale hiring processes for high-demand recruitment campaigns.",
       "executive": "Executive search",
+      "executiveDesc": "Identifying and attracting senior leaders and C-suite professionals.",
       "payroll": "Payroll solutions",
+      "payrollDesc": "End-to-end payroll management ensuring compliance and accuracy.",
       "federal": "Federal Government talent solutions",
+      "federalDesc": "Specialist recruitment for Australian Federal Government roles and departments.",
       "advertising": "Recruitment advertising solutions",
-      "immigration": "Immigration services"
+      "advertisingDesc": "Strategic job advertising to attract the right candidates across all channels.",
+      "immigration": "Immigration services",
+      "immigrationDesc": "Supporting skilled workers through Australian visa and immigration processes."
     },
     "outsourcing": {
       "title": "Outsourcing",
       "rpo": "Recruitment process outsourcing",
+      "rpoDesc": "Full outsourcing of your recruitment function to streamline hiring at scale.",
       "managed": "Managed service provider",
-      "offshoring": "Offshoring talent solutions"
+      "managedDesc": "A single provider managing your entire contingent workforce supply chain.",
+      "offshoring": "Offshoring talent solutions",
+      "offshoringDesc": "Building high-performing offshore teams to extend your capabilities."
     },
     "consultancy": {
       "title": "Consultancy",
       "emerging": "Emerging talent",
+      "emergingDesc": "Identifying and nurturing early-career talent with high growth potential.",
       "experienced": "Experienced talent",
+      "experiencedDesc": "Placing seasoned professionals in roles that match their depth of expertise.",
       "project": "Project solutions",
-      "procurement": "Services procurement"
+      "projectDesc": "Assembling specialist teams for fixed-term projects and key deliverables.",
+      "procurement": "Services procurement",
+      "procurementDesc": "Sourcing and managing service providers and statements of work."
     },
     "talentAdvisory": {
       "title": "Talent advisory",
       "market": "Market intelligence",
-      "development": "Talent development"
+      "marketDesc": "Data-driven insights into salary benchmarks, talent availability, and trends.",
+      "development": "Talent development",
+      "developmentDesc": "Upskilling and career development programs tailored to your workforce."
     }
   },
   "actions": {

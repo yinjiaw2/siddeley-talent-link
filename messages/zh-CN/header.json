@@ -16,31 +16,48 @@
     "recruitment": {
       "title": "招聘",
       "permanent": "永久招聘",
+      "permanentDesc": "将企业与契合其文化与目标的长期人才精准对接。",
       "temporary": "临时招聘",
+      "temporaryDesc": "灵活的人员配置方案，满足短期及季节性用工需求。",
       "volume": "批量招聘",
+      "volumeDesc": "高效的大规模招聘流程，助力应对高峰期用人需求。",
       "executive": "高管猎头",
+      "executiveDesc": "精准识别并吸引高层管理人员及C级专业人才。",
       "payroll": "薪资解决方案",
+      "payrollDesc": "端到端的薪资管理服务，确保合规性与准确性。",
       "federal": "联邦政府人才解决方案",
+      "federalDesc": "面向澳大利亚联邦政府职位及部门的专业招聘服务。",
       "advertising": "招聘广告解决方案",
-      "immigration": "移民服务"
+      "advertisingDesc": "战略性职位广告投放，通过全渠道吸引合适候选人。",
+      "immigration": "移民服务",
+      "immigrationDesc": "协助技术人才顺利完成澳大利亚签证及移民申请流程。"
     },
     "outsourcing": {
       "title": "外包",
       "rpo": "招聘流程外包",
+      "rpoDesc": "全面外包招聘职能，实现规模化招聘的高效运营。",
       "managed": "托管服务提供商",
-      "offshoring": "离岸人才解决方案"
+      "managedDesc": "由单一服务商统一管理您的全部灵活用工供应链。",
+      "offshoring": "离岸人才解决方案",
+      "offshoringDesc": "组建高效离岸团队，全面拓展您的业务能力边界。"
     },
     "consultancy": {
       "title": "咨询",
       "emerging": "新兴人才",
+      "emergingDesc": "发现并培养具有高成长潜力的职场新锐人才。",
       "experienced": "资深人才",
+      "experiencedDesc": "将经验丰富的专业人士匹配至最适合其专长的岗位。",
       "project": "项目解决方案",
-      "procurement": "服务采购"
+      "projectDesc": "为固定期限项目及关键交付成果组建专业团队。",
+      "procurement": "服务采购",
+      "procurementDesc": "甄选并管理服务提供商及工作说明书（SOW）。"
     },
     "talentAdvisory": {
       "title": "人才顾问",
       "market": "市场情报",
-      "development": "人才发展"
+      "marketDesc": "提供薪酬基准、人才供给及市场趋势的数据洞察。",
+      "development": "人才发展",
+      "developmentDesc": "为您的员工量身定制技能提升与职业发展项目。"
     }
   },
   "actions": {

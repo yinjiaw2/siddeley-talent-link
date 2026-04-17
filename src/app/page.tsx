@@ -7,6 +7,7 @@ import SuccessCases from "@/components/home/SuccessCases";
 import FAQ from "@/components/home/Faq";
 import Contact from "@/components/home/Contact";
 import CompanyDetails from "@/components/home/CompanyDetails";
+import ServiceCards from "@/components/home/ServiceCards";
 import HomeSectionTracker from "@/analytics/HomeSectionTracker";
 
 export default function Home() {
@@ -14,8 +15,9 @@ export default function Home() {
     <>
       <HomeSectionTracker />
       <HeroSection />
-
+      <ServiceCards />
       <CoreServices />
+
       <CompanyDetails />
       <OurTeam />
       <ServiceProcess />
