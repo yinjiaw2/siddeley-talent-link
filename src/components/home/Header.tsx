@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
+import ServicesDropdown from "./ServicesDropdown";
 
 const fontStyle = { fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif" };
 
@@ -14,9 +15,7 @@ export default function Header() {
   const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
   const nextLocale = locale === "zh-CN" ? "en" : "zh-CN";
 
   const navLinks = [
@@ -45,21 +44,9 @@ export default function Header() {
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setDropdownOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, []);
-
   const handleLocaleChange = () => {
     document.cookie = `NEXT_LOCALE=${nextLocale}; path=/; max-age=31536000; samesite=lax`;
     setMenuOpen(false);
-    setDropdownOpen(false);
     setMobileServicesOpen(false);
     router.refresh();
   };
@@ -89,41 +76,8 @@ export default function Header() {
               {t("nav.home")}
             </Link>
 
-            {/* Dropdown */}
-            <div className="relative" ref={dropdownRef}>
-              <Link
-                href={servicesDropdown.href}
-                onClick={() => setDropdownOpen((v) => !v)}
-                className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-gray-300 rounded-md transition-colors duration-150 hover:text-white hover:bg-white/10"
-                style={fontStyle}
-              >
-                {servicesDropdown.label}
-                <ChevronDown
-                  size={14}
-                  className={`transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`}
-                />
-              </Link>
-
-              {/* Dropdown panel */}
-              <div
-                className={`absolute top-full left-0 mt-1 w-36 rounded-xl border border-white/10 overflow-hidden shadow-xl transition-all duration-200 ${
-                  dropdownOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-1 pointer-events-none"
-                }`}
-                style={{ backgroundColor: "#0D1B2A" }}
-              >
-                {servicesDropdown.items.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setDropdownOpen(false)}
-                    className="block px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 transition-colors duration-150"
-                    style={fontStyle}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
+            {/* Services mega dropdown */}
+            <ServicesDropdown />
 
             {navLinks.slice(1).map((link) => (
               <Link

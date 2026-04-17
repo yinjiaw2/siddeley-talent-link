@@ -2,10 +2,41 @@
   "nav": {
     "home": "Home",
     "about": "About Us",
-    "services": "Core Services",
+    "services": "Services",
     "serviceProcess": "Service Process",
     "successCases": "Success Stories",
     "news": "News"
+  },
+  "services": {
+    "recruitment": {
+      "title": "Recruitment",
+      "permanent": "Permanent recruitment",
+      "temporary": "Temporary recruitment",
+      "volume": "Volume recruitment",
+      "executive": "Executive search",
+      "payroll": "Payroll solutions",
+      "federal": "Federal Government talent solutions",
+      "advertising": "Recruitment advertising solutions",
+      "immigration": "Immigration services"
+    },
+    "outsourcing": {
+      "title": "Outsourcing",
+      "rpo": "Recruitment process outsourcing",
+      "managed": "Managed service provider",
+      "offshoring": "Offshoring talent solutions"
+    },
+    "consultancy": {
+      "title": "Consultancy",
+      "emerging": "Emerging talent",
+      "experienced": "Experienced talent",
+      "project": "Project solutions",
+      "procurement": "Services procurement"
+    },
+    "talentAdvisory": {
+      "title": "Talent advisory",
+      "market": "Market intelligence",
+      "development": "Talent development"
+    }
   },
   "actions": {
     "openMenu": "Open menu",

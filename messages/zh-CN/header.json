@@ -2,10 +2,41 @@
   "nav": {
     "home": "主页",
     "about": "关于我们",
-    "services": "核心服务",
+    "services": "服务",
     "serviceProcess": "服务流程",
     "successCases": "成功案例",
     "news": "新闻"
+  },
+  "services": {
+    "recruitment": {
+      "title": "招聘",
+      "permanent": "永久招聘",
+      "temporary": "临时招聘",
+      "volume": "批量招聘",
+      "executive": "高管猎头",
+      "payroll": "薪资解决方案",
+      "federal": "联邦政府人才解决方案",
+      "advertising": "招聘广告解决方案",
+      "immigration": "移民服务"
+    },
+    "outsourcing": {
+      "title": "外包",
+      "rpo": "招聘流程外包",
+      "managed": "托管服务提供商",
+      "offshoring": "离岸人才解决方案"
+    },
+    "consultancy": {
+      "title": "咨询",
+      "emerging": "新兴人才",
+      "experienced": "资深人才",
+      "project": "项目解决方案",
+      "procurement": "服务采购"
+    },
+    "talentAdvisory": {
+      "title": "人才顾问",
+      "market": "市场情报",
+      "development": "人才发展"
+    }
   },
   "actions": {
     "openMenu": "打开菜单",
