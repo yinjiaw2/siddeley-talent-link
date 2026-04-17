@@ -8,6 +8,11 @@
     "news": "News"
   },
   "services": {
+    "promo": {
+      "title": "Services",
+      "description": "Australia's leading employers trust us to deliver talent solutions tailored to their exact requirements.",
+      "cta": "Browse our range of services"
+    },
     "recruitment": {
       "title": "Recruitment",
       "permanent": "Permanent recruitment",

@@ -8,6 +8,11 @@
     "news": "新闻"
   },
   "services": {
+    "promo": {
+      "title": "服务",
+      "description": "澳大利亚众多领先企业信赖我们，为其提供量身定制的人才解决方案。",
+      "cta": "浏览我们的服务"
+    },
     "recruitment": {
       "title": "招聘",
       "permanent": "永久招聘",
