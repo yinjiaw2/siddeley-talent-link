@@ -1,5 +1,5 @@
 import HeroSection from "@/components/home/HeroSection";
-import NumberSection from "@/components/home/NumbersSection";
+
 import CoreServices from "@/components/home/CoreServices";
 import OurTeam from "@/components/home/OurTeam";
 import ServiceProcess from "@/components/home/ServiceProcess";
@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <HomeSectionTracker />
       <HeroSection />
-      <NumberSection />
+
       <CoreServices />
       <OurTeam />
       <ServiceProcess />
