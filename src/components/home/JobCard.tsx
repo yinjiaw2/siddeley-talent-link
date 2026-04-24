@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 
 type JobCardProps = {
@@ -21,8 +22,10 @@ export default function JobCard({
   id,
   title,
 }: JobCardProps) {
+  const router = useRouter();
+
   const handleClick = () => {
-    console.log("job card clicked", { id, title });
+    router.push(`/job/id=${id}`);
   };
 
   return (
