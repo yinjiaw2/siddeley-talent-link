@@ -4,6 +4,35 @@ import { cookies, headers } from "next/headers";
 const defaultLocale = "zh-CN";
 const locales = [defaultLocale, "en"] as const;
 const localeCookieName = "NEXT_LOCALE";
+const homeNamespaces = [
+  "hero",
+  "contact",
+  "coreServices",
+  "faq",
+  "numbers",
+  "ourTeam",
+  "serviceCards",
+  "serviceProcess",
+  "successCases",
+] as const;
+const sharedNamespaces = ["header", "footer"] as const;
+const aboutNamespaces = ["about"] as const;
+
+async function loadMessageGroup(
+  locale: (typeof locales)[number],
+  group: string,
+  namespaces: readonly string[],
+) {
+  const entries = await Promise.all(
+    namespaces.map(async (namespace) => [
+      namespace,
+      (await import(`../../messages/${locale}/${group}/${namespace}.json`))
+        .default,
+    ]),
+  );
+
+  return Object.fromEntries(entries);
+}
 
 function isSupportedLocale(locale: string): locale is (typeof locales)[number] {
   return locales.includes(locale as (typeof locales)[number]);
@@ -47,22 +76,16 @@ export default getRequestConfig(async ({ requestLocale }) => {
       : cookieLocale && isSupportedLocale(cookieLocale)
         ? cookieLocale
         : (browserLocale ?? defaultLocale);
+  const [sharedMessages, homeMessages, aboutMessages] = await Promise.all([
+    loadMessageGroup(locale, "shared", sharedNamespaces),
+    loadMessageGroup(locale, "home", homeNamespaces),
+    loadMessageGroup(locale, "about", aboutNamespaces),
+  ]);
+
   const messages = {
-    about: (await import(`../../messages/${locale}/about.json`)).default,
-    contact: (await import(`../../messages/${locale}/contact.json`)).default,
-    coreServices: (await import(`../../messages/${locale}/coreServices.json`))
-      .default,
-    faq: (await import(`../../messages/${locale}/faq.json`)).default,
-    footer: (await import(`../../messages/${locale}/footer.json`)).default,
-    header: (await import(`../../messages/${locale}/header.json`)).default,
-    hero: (await import(`../../messages/${locale}/hero.json`)).default,
-    numbers: (await import(`../../messages/${locale}/numbers.json`)).default,
-    ourTeam: (await import(`../../messages/${locale}/ourTeam.json`)).default,
-    serviceProcess: (
-      await import(`../../messages/${locale}/serviceProcess.json`)
-    ).default,
-    successCases: (await import(`../../messages/${locale}/successCases.json`))
-      .default,
+    ...sharedMessages,
+    ...homeMessages,
+    ...aboutMessages,
   };
 
   return {

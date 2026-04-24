@@ -41,7 +41,8 @@ const services: { title: string; desc: string; icon: LucideIcon }[] = [
 ];
 
 export default function ServiceCards() {
-  const t = useTranslations("header");
+  const t = useTranslations("serviceCards");
+  const headerT = useTranslations("header");
 
   return (
     <section className="w-full py-20 px-6 bg-white">
@@ -52,13 +53,13 @@ export default function ServiceCards() {
             className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4"
             style={{ fontFamily: font, letterSpacing: "-0.02em" }}
           >
-            {t("serviceCards.title")}
+            {t("title")}
           </h2>
           <p
             className="text-base text-gray-500 max-w-2xl leading-relaxed"
             style={{ fontFamily: font }}
           >
-            {t("serviceCards.description")}
+            {t("description")}
           </p>
         </div>
 
@@ -79,13 +80,13 @@ export default function ServiceCards() {
                   className="text-sm font-bold text-gray-900 leading-snug"
                   style={{ fontFamily: font }}
                 >
-                  {t(s.title as Parameters<typeof t>[0])}
+                  {headerT(s.title as Parameters<typeof headerT>[0])}
                 </h3>
                 <p
                   className="text-sm text-gray-500 leading-relaxed"
                   style={{ fontFamily: font }}
                 >
-                  {t(s.desc as Parameters<typeof t>[0])}
+                  {headerT(s.desc as Parameters<typeof headerT>[0])}
                 </p>
               </div>
             );

@@ -60,10 +60,6 @@
       "developmentDesc": "为您的员工量身定制技能提升与职业发展项目。"
     }
   },
-  "serviceCards": {
-    "title": "我们的全方位服务",
-    "description": "从永久招聘到战略人才顾问，我们提供覆盖全就业周期的端到端人才解决方案。"
-  },
   "actions": {
     "openMenu": "打开菜单",
     "closeMenu": "关闭菜单"
