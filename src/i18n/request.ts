@@ -1,46 +1,71 @@
 import { getRequestConfig } from "next-intl/server";
 import { cookies, headers } from "next/headers";
+import enAbout from "../../messages/en/about/about.json";
+import enContact from "../../messages/en/home/contact.json";
+import enCoreServices from "../../messages/en/home/coreServices.json";
+import enFaq from "../../messages/en/home/faq.json";
+import enHero from "../../messages/en/home/hero.json";
+import enHomeJobs from "../../messages/en/home/home-jobs.json";
+import enNumbers from "../../messages/en/home/numbers.json";
+import enOurTeam from "../../messages/en/home/ourTeam.json";
+import enServiceCards from "../../messages/en/home/serviceCards.json";
+import enServiceProcess from "../../messages/en/home/serviceProcess.json";
+import enSuccessCases from "../../messages/en/home/successCases.json";
+import enRecruitJobs from "../../messages/en/services/recruit/jobs.json";
+import enFooter from "../../messages/en/shared/footer.json";
+import enHeader from "../../messages/en/shared/header.json";
+import zhAbout from "../../messages/zh-CN/about/about.json";
+import zhContact from "../../messages/zh-CN/home/contact.json";
+import zhCoreServices from "../../messages/zh-CN/home/coreServices.json";
+import zhFaq from "../../messages/zh-CN/home/faq.json";
+import zhHero from "../../messages/zh-CN/home/hero.json";
+import zhHomeJobs from "../../messages/zh-CN/home/home-jobs.json";
+import zhNumbers from "../../messages/zh-CN/home/numbers.json";
+import zhOurTeam from "../../messages/zh-CN/home/ourTeam.json";
+import zhServiceCards from "../../messages/zh-CN/home/serviceCards.json";
+import zhServiceProcess from "../../messages/zh-CN/home/serviceProcess.json";
+import zhSuccessCases from "../../messages/zh-CN/home/successCases.json";
+import zhRecruitJobs from "../../messages/zh-CN/services/recruit/jobs.json";
+import zhFooter from "../../messages/zh-CN/shared/footer.json";
+import zhHeader from "../../messages/zh-CN/shared/header.json";
 
 const defaultLocale = "zh-CN";
 const locales = [defaultLocale, "en"] as const;
 const localeCookieName = "NEXT_LOCALE";
-const homeNamespaces = [
-  { namespace: "hero", file: "hero" },
-  { namespace: "contact", file: "contact" },
-  { namespace: "coreServices", file: "coreServices" },
-  { namespace: "faq", file: "faq" },
-  { namespace: "homeJobs", file: "home-jobs" },
-  { namespace: "numbers", file: "numbers" },
-  { namespace: "ourTeam", file: "ourTeam" },
-  { namespace: "serviceCards", file: "serviceCards" },
-  { namespace: "serviceProcess", file: "serviceProcess" },
-  { namespace: "successCases", file: "successCases" },
-] as const;
-const sharedNamespaces = ["header", "footer"] as const;
-const aboutNamespaces = ["about"] as const;
-
-async function loadMessageGroup(
-  locale: (typeof locales)[number],
-  group: string,
-  namespaces:
-    | readonly string[]
-    | readonly { namespace: string; file: string }[],
-) {
-  const entries = await Promise.all(
-    namespaces.map(async (entry) => {
-      const namespace = typeof entry === "string" ? entry : entry.namespace;
-      const file = typeof entry === "string" ? entry : entry.file;
-
-      return [
-        namespace,
-        (await import(`../../messages/${locale}/${group}/${file}.json`))
-          .default,
-      ];
-    }),
-  );
-
-  return Object.fromEntries(entries);
-}
+const messagesByLocale = {
+  en: {
+    about: enAbout,
+    contact: enContact,
+    coreServices: enCoreServices,
+    faq: enFaq,
+    footer: enFooter,
+    header: enHeader,
+    hero: enHero,
+    homeJobs: enHomeJobs,
+    numbers: enNumbers,
+    ourTeam: enOurTeam,
+    recruitJobs: enRecruitJobs,
+    serviceCards: enServiceCards,
+    serviceProcess: enServiceProcess,
+    successCases: enSuccessCases,
+  },
+  "zh-CN": {
+    about: zhAbout,
+    contact: zhContact,
+    coreServices: zhCoreServices,
+    faq: zhFaq,
+    footer: zhFooter,
+    header: zhHeader,
+    hero: zhHero,
+    homeJobs: zhHomeJobs,
+    numbers: zhNumbers,
+    ourTeam: zhOurTeam,
+    recruitJobs: zhRecruitJobs,
+    serviceCards: zhServiceCards,
+    serviceProcess: zhServiceProcess,
+    successCases: zhSuccessCases,
+  },
+} as const;
 
 function isSupportedLocale(locale: string): locale is (typeof locales)[number] {
   return locales.includes(locale as (typeof locales)[number]);
@@ -84,20 +109,9 @@ export default getRequestConfig(async ({ requestLocale }) => {
       : cookieLocale && isSupportedLocale(cookieLocale)
         ? cookieLocale
         : (browserLocale ?? defaultLocale);
-  const [sharedMessages, homeMessages, aboutMessages] = await Promise.all([
-    loadMessageGroup(locale, "shared", sharedNamespaces),
-    loadMessageGroup(locale, "home", homeNamespaces),
-    loadMessageGroup(locale, "about", aboutNamespaces),
-  ]);
-
-  const messages = {
-    ...sharedMessages,
-    ...homeMessages,
-    ...aboutMessages,
-  };
 
   return {
     locale,
-    messages,
+    messages: messagesByLocale[locale],
   };
 });
