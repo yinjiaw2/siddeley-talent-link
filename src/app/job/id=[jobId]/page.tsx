@@ -1,4 +1,4 @@
-import { getLocale, getTranslations } from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import JobDetailsView, {
   type JobDetails,
@@ -15,12 +15,9 @@ export default async function JobDetailsRoute({
     notFound();
   }
 
-  const locale = await getLocale();
   const t = await getTranslations("homeJobs");
-  const jobsModule = await import(
-    `../../../../messages/${locale}/services/recruit/jobs.json`
-  );
-  const jobs = jobsModule.default.jobs as JobDetails[];
+  const messages = await getMessages();
+  const jobs = (messages.recruitJobs as { jobs: JobDetails[] }).jobs;
   const job = jobs.find((entry) => entry.id === jobId);
 
   if (!job) {
@@ -28,11 +25,8 @@ export default async function JobDetailsRoute({
   }
 
   return (
-    <JobDetailsView
-      job={job}
-      jobParam={`id=${jobId}`}
-      backLabel={t("label")}
-      amountLabel={t("amountLabel")}
-    />
+    <div>
+      <p>{job.title}</p>
+    </div>
   );
 }

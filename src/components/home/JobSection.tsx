@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
 import JobCard from "@/components/home/JobCard";
 
 type Job = {
@@ -14,12 +14,9 @@ const fontStyle = {
 };
 
 export default async function JobSection() {
-  const locale = await getLocale();
   const t = await getTranslations("homeJobs");
-  const jobsModule = await import(
-    `../../../messages/${locale}/services/recruit/jobs.json`
-  );
-  const jobs = jobsModule.default.jobs as Job[];
+  const messages = await getMessages();
+  const jobs = (messages.recruitJobs as { jobs: Job[] }).jobs;
 
   return (
     <section id="jobs" className="bg-white px-6 py-24 scroll-mt-16">
