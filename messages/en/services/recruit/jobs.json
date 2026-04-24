@@ -1,0 +1,16 @@
+{
+  "jobs": [
+    {
+      "id": "1",
+      "title": "Senior Recruitment Consultant",
+      "description": "Lead end-to-end hiring campaigns for client accounts, manage stakeholder communication, and deliver shortlists for high-priority roles.",
+      "salary": "$95,000 AUD"
+    },
+    {
+      "id": "2",
+      "title": "Talent Acquisition Specialist",
+      "description": "Source and screen candidates across multiple industries, coordinate interviews, and maintain a strong pipeline for recurring recruitment needs.",
+      "salary": "$78,000 AUD"
+    }
+  ]
+}
