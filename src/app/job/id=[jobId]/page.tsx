@@ -4,21 +4,12 @@ import JobDetailsView, {
   type JobDetails,
 } from "@/components/job-details/JobDetailsPage";
 
-function getJobIdFromParam(jobParam: string) {
-  if (!jobParam.startsWith("id=")) {
-    return null;
-  }
-
-  return jobParam.slice(3);
-}
-
 export default async function JobDetailsRoute({
   params,
 }: {
-  params: Promise<{ jobParam: string }>;
+  params: Promise<{ jobId: string }>;
 }) {
-  const { jobParam } = await params;
-  const jobId = getJobIdFromParam(jobParam);
+  const { jobId } = await params;
 
   if (!jobId) {
     notFound();
@@ -39,7 +30,7 @@ export default async function JobDetailsRoute({
   return (
     <JobDetailsView
       job={job}
-      jobParam={jobParam}
+      jobParam={`id=${jobId}`}
       backLabel={t("label")}
       amountLabel={t("amountLabel")}
     />
