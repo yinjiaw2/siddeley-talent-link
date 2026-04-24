@@ -13,7 +13,7 @@ export default function AboutPage() {
     <>
       <AboutHero />
       <AboutIntro />
-      <AboutMap />
+      {/* <AboutMap /> */}
     </>
   );
 }

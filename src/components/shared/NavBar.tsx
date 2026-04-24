@@ -11,7 +11,7 @@ const fontStyle = {
   fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
 };
 
-export default function Header() {
+export default function NavBar() {
   const t = useTranslations("header");
   const locale = useLocale();
   const router = useRouter();
