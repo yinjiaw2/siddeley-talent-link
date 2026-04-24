@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import ServicesDropdown from "./ServicesDropdown";
+import { serviceRoutes } from "@/lib/serviceRoutes";
 
 const fontStyle = {
   fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
@@ -28,11 +29,11 @@ export default function NavBar() {
 
   const servicesDropdown = {
     label: t("nav.services"),
-    href: "/#core-services",
-    items: [
-      { label: t("nav.serviceProcess"), href: "/#process" },
-      { label: t("nav.successCases"), href: "/#cases" },
-    ],
+    href: "/services",
+    items: serviceRoutes.map((route) => ({
+      label: t(route.titleKey as Parameters<typeof t>[0]),
+      href: route.href,
+    })),
   };
 
   useEffect(() => {

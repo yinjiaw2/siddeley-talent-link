@@ -8,6 +8,7 @@ import {
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { serviceRoutes } from "@/lib/serviceRoutes";
 
 const fontStyle = {
   fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
@@ -15,64 +16,14 @@ const fontStyle = {
 
 export default function ServicesDropdown() {
   const t = useTranslations("header");
-
-  const columns = [
-    {
-      title: t("services.recruitment.title"),
-      items: [
-        { label: t("services.recruitment.permanent"), href: "/#core-services" },
-        { label: t("services.recruitment.temporary"), href: "/#core-services" },
-        { label: t("services.recruitment.volume"), href: "/#core-services" },
-        { label: t("services.recruitment.executive"), href: "/#core-services" },
-        { label: t("services.recruitment.payroll"), href: "/#core-services" },
-        { label: t("services.recruitment.federal"), href: "/#core-services" },
-        {
-          label: t("services.recruitment.advertising"),
-          href: "/#core-services",
-        },
-        {
-          label: t("services.recruitment.immigration"),
-          href: "/#core-services",
-        },
-      ],
-    },
-    {
-      title: t("services.outsourcing.title"),
-      items: [
-        { label: t("services.outsourcing.rpo"), href: "/#core-services" },
-        { label: t("services.outsourcing.managed"), href: "/#core-services" },
-        {
-          label: t("services.outsourcing.offshoring"),
-          href: "/#core-services",
-        },
-      ],
-    },
-    {
-      title: t("services.consultancy.title"),
-      items: [
-        { label: t("services.consultancy.emerging"), href: "/#core-services" },
-        {
-          label: t("services.consultancy.experienced"),
-          href: "/#core-services",
-        },
-        { label: t("services.consultancy.project"), href: "/#core-services" },
-        {
-          label: t("services.consultancy.procurement"),
-          href: "/#core-services",
-        },
-      ],
-    },
-    {
-      title: t("services.talentAdvisory.title"),
-      items: [
-        { label: t("services.talentAdvisory.market"), href: "/#core-services" },
-        {
-          label: t("services.talentAdvisory.development"),
-          href: "/#core-services",
-        },
-      ],
-    },
-  ];
+  const columns = serviceRoutes.map((route) => ({
+    title: t(route.titleKey as Parameters<typeof t>[0]),
+    href: route.href,
+    items: route.items.map((item) => ({
+      label: t(item.labelKey as Parameters<typeof t>[0]),
+      href: `${route.href}#${item.id}`,
+    })),
+  }));
 
   return (
     <DropdownMenu modal={false}>
@@ -110,6 +61,13 @@ export default function ServicesDropdown() {
               >
                 {t("services.promo.description")}
               </p>
+              <Link
+                href="/services"
+                className="inline-flex w-fit text-sm font-semibold text-white transition-colors duration-150 hover:text-[#FB8C00]"
+                style={fontStyle}
+              >
+                {t("services.promo.cta")}
+              </Link>
             </div>
           </div>
 
@@ -117,12 +75,13 @@ export default function ServicesDropdown() {
           <div className="grid grid-cols-4 gap-8">
             {columns.map((col) => (
               <div key={col.title} className="flex flex-col gap-3">
-                <span
-                  className="text-sm font-bold text-white"
+                <Link
+                  href={col.href}
+                  className="text-sm font-bold text-white transition-colors duration-150 hover:text-[#FB8C00]"
                   style={fontStyle}
                 >
                   {col.title}
-                </span>
+                </Link>
                 <div className="flex flex-col gap-2">
                   {col.items.map((item) => (
                     <Link
