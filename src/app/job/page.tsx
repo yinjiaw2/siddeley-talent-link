@@ -1,9 +1,9 @@
 type Props = {
-  searchParams: { id?: string };
+  searchParams: Promise<{ id?: string }>;
 };
 
-export default function JobPage({ searchParams }: Props) {
-  const id = searchParams.id;
+export default async function JobPage({ searchParams }: Props) {
+  const { id } = await searchParams;
 
   return <div>Job ID: {id}</div>;
 }
