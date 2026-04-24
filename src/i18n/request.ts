@@ -5,15 +5,16 @@ const defaultLocale = "zh-CN";
 const locales = [defaultLocale, "en"] as const;
 const localeCookieName = "NEXT_LOCALE";
 const homeNamespaces = [
-  "hero",
-  "contact",
-  "coreServices",
-  "faq",
-  "numbers",
-  "ourTeam",
-  "serviceCards",
-  "serviceProcess",
-  "successCases",
+  { namespace: "hero", file: "hero" },
+  { namespace: "contact", file: "contact" },
+  { namespace: "coreServices", file: "coreServices" },
+  { namespace: "faq", file: "faq" },
+  { namespace: "homeJobs", file: "home-jobs" },
+  { namespace: "numbers", file: "numbers" },
+  { namespace: "ourTeam", file: "ourTeam" },
+  { namespace: "serviceCards", file: "serviceCards" },
+  { namespace: "serviceProcess", file: "serviceProcess" },
+  { namespace: "successCases", file: "successCases" },
 ] as const;
 const sharedNamespaces = ["header", "footer"] as const;
 const aboutNamespaces = ["about"] as const;
@@ -21,14 +22,21 @@ const aboutNamespaces = ["about"] as const;
 async function loadMessageGroup(
   locale: (typeof locales)[number],
   group: string,
-  namespaces: readonly string[],
+  namespaces:
+    | readonly string[]
+    | readonly { namespace: string; file: string }[],
 ) {
   const entries = await Promise.all(
-    namespaces.map(async (namespace) => [
-      namespace,
-      (await import(`../../messages/${locale}/${group}/${namespace}.json`))
-        .default,
-    ]),
+    namespaces.map(async (entry) => {
+      const namespace = typeof entry === "string" ? entry : entry.namespace;
+      const file = typeof entry === "string" ? entry : entry.file;
+
+      return [
+        namespace,
+        (await import(`../../messages/${locale}/${group}/${file}.json`))
+          .default,
+      ];
+    }),
   );
 
   return Object.fromEntries(entries);
