@@ -25,9 +25,8 @@ export default function JobCard({
   const router = useRouter();
 
   const handleClick = () => {
-    router.push(`/job/id=${id}`);
+    router.push(`/job?id=${id}`);
   };
-
   return (
     <button
       type="button"
