@@ -1,5 +1,4 @@
-import { redirect } from "next/navigation";
-import { getHomeJobSlugById } from "@/lib/homeJobs";
+import JobDetailsPage from "@/components/job-details/JobDetailsPage";
 
 type Props = {
   searchParams: Promise<{ id?: string }>;
@@ -8,13 +7,9 @@ type Props = {
 export default async function JobPage({ searchParams }: Props) {
   const { id } = await searchParams;
 
-  if (id) {
-    const slug = getHomeJobSlugById(id);
-
-    if (slug) {
-      redirect(`/jobs/${slug}`);
-    }
+  if (!id) {
+    return <p>Job ID is missing.</p>;
   }
 
-  redirect("/#job-listings");
+  return <JobDetailsPage jobId={id} />;
 }

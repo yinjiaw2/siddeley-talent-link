@@ -33,10 +33,17 @@ const fontStyle = {
 const MIN_LOOP_CYCLES = 6;
 const AUTO_SCROLL_PX_PER_SECOND = 36;
 
-function JobCard({ amount, amountLabel, description, id, title }: JobCardProps) {
+function JobCard({
+  amount,
+  amountLabel,
+  description,
+  id,
+  title,
+}: JobCardProps) {
   const router = useRouter();
 
   const handleClick = () => {
+    console.log(`Navigating to job details for job ID: ${id}`);
     router.push(`/job?id=${id}`);
   };
 

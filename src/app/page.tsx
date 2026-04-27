@@ -10,6 +10,7 @@ import Contact from "@/components/home/Contact";
 import CompanyDetails from "@/components/home/CompanyDetails";
 import ServiceCards from "@/components/home/ServiceCards";
 import HomeSectionTracker from "@/analytics/HomeSectionTracker";
+import JobSection from "@/components/home/JobSection";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <JobListings />
       <ServiceCards />
       <CoreServices />
+      <JobSection />
       <CompanyDetails />
       <OurTeam />
       <ServiceProcess />
