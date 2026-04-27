@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import enRecruitJobs from "../../../messages/en/services/recruit/jobs.json";
 import zhRecruitJobs from "../../../messages/zh-CN/services/recruit/jobs.json";
@@ -19,36 +19,17 @@ const fontStyle = {
   fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
 };
 
-const messagesByLocale = {
-  en: {
-    amountLabel: "Salary",
-    backLabel: "Back to jobs",
-    descriptionLabel: "Role overview",
-    eyebrow: "Open Position",
-    emptyId: "A job id is required.",
-    notFound: "This job could not be found.",
-  },
-  "zh-CN": {
-    amountLabel: "薪资",
-    backLabel: "返回职位列表",
-    descriptionLabel: "职位概览",
-    eyebrow: "招聘职位",
-    emptyId: "缺少职位编号。",
-    notFound: "未找到该职位信息。",
-  },
-} as const;
-
 const jobsByLocale = {
   en: enRecruitJobs.jobs,
   "zh-CN": zhRecruitJobs.jobs,
-} as const satisfies Record<keyof typeof messagesByLocale, Job[]>;
+} as const satisfies Record<"en" | "zh-CN", Job[]>;
 
 export default async function JobDetailsPage({
   jobId,
 }: JobDetailsPageProps) {
   const locale = await getLocale();
   const currentLocale = locale === "en" ? "en" : "zh-CN";
-  const copy = messagesByLocale[currentLocale];
+  const t = await getTranslations("jobDetails");
 
   if (!jobId) {
     notFound();
@@ -69,7 +50,7 @@ export default async function JobDetailsPage({
           style={fontStyle}
         >
           <span aria-hidden="true">←</span>
-          {copy.backLabel}
+          {t("backLabel")}
         </Link>
 
         <div className="overflow-hidden rounded-[2rem] bg-white shadow-[0_24px_80px_rgba(13,27,42,0.08)]">
@@ -78,7 +59,7 @@ export default async function JobDetailsPage({
               className="text-sm font-semibold uppercase tracking-[0.24em] text-[#FB8C00]"
               style={fontStyle}
             >
-              {copy.eyebrow}
+              {t("eyebrow")}
             </p>
             <h1
               className="mt-4 max-w-3xl text-4xl font-extrabold leading-tight md:text-5xl"
@@ -94,7 +75,7 @@ export default async function JobDetailsPage({
                 className="text-sm font-semibold uppercase tracking-[0.24em] text-[#FB8C00]"
                 style={fontStyle}
               >
-                {copy.descriptionLabel}
+                {t("descriptionLabel")}
               </p>
               <p
                 className="mt-5 text-base leading-8 text-slate-600 md:text-lg"
@@ -109,7 +90,7 @@ export default async function JobDetailsPage({
                 className="text-xs font-bold uppercase tracking-[0.24em] text-slate-500"
                 style={fontStyle}
               >
-                {copy.amountLabel}
+                {t("amountLabel")}
               </p>
               <p
                 className="mt-3 text-3xl font-extrabold text-[#0D1B2A]"
