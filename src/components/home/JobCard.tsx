@@ -31,7 +31,7 @@ const fontStyle = {
 };
 
 const MIN_LOOP_CYCLES = 6;
-const AUTOPLAY_DELAY_MS = 2800;
+const AUTO_SCROLL_PX_PER_SECOND = 36;
 
 function JobCard({ amount, amountLabel, description, id, title }: JobCardProps) {
   const router = useRouter();
@@ -109,12 +109,35 @@ export function JobCarousel({ amountLabel, jobs }: JobCarouselProps) {
   useEffect(() => {
     if (!api || isPaused) return;
 
-    const intervalId = window.setInterval(() => {
-      api.scrollNext();
-    }, AUTOPLAY_DELAY_MS);
+    const engine = api.internalEngine();
+    let animationFrameId = 0;
+    let lastTimestamp = 0;
+
+    const step = (timestamp: number) => {
+      if (lastTimestamp === 0) {
+        lastTimestamp = timestamp;
+      }
+
+      const deltaTime = timestamp - lastTimestamp;
+      lastTimestamp = timestamp;
+
+      const distance = (AUTO_SCROLL_PX_PER_SECOND * deltaTime) / 1000;
+      const nextLocation = engine.location.get() - distance;
+
+      engine.location.set(nextLocation);
+      engine.target.set(nextLocation);
+      engine.previousLocation.set(nextLocation);
+      engine.scrollLooper.loop(-1);
+      engine.slideLooper.loop();
+      engine.translate.to(engine.location.get());
+
+      animationFrameId = window.requestAnimationFrame(step);
+    };
+
+    animationFrameId = window.requestAnimationFrame(step);
 
     return () => {
-      window.clearInterval(intervalId);
+      window.cancelAnimationFrame(animationFrameId);
     };
   }, [api, isPaused]);
 
