@@ -51,6 +51,7 @@ export default async function JobSlugPage({ params }: Props) {
     responsibilitiesTitle: t("responsibilitiesTitle"),
     requirementsTitle: t("requirementsTitle"),
     noteTitle: t("noteTitle"),
+    salaryNote: t("salaryNote"),
     applyCardTitle: t("applyCardTitle"),
     applyCardDescription: t("applyCardDescription"),
     contactCta: t("contactCta"),
@@ -65,9 +66,7 @@ export default async function JobSlugPage({ params }: Props) {
       hoursLabel: t("sharedRole.hoursLabel"),
       hoursValue: t("sharedRole.hoursValue"),
       skillsetsTitle: t("sharedRole.skillsetsTitle"),
-      skillsets: t.raw("sharedRole.skillsets") as string[],
       dutiesTitle: t("sharedRole.dutiesTitle"),
-      duties: t.raw("sharedRole.duties") as string[],
     },
     meta: {
       publishedAt: t("meta.publishedAt"),

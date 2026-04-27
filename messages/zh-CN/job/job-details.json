@@ -13,6 +13,7 @@
     "category": "岗位类别",
     "salary": "薪资待遇"
   },
+  "salaryNote": "具体薪资按技能和雇主而定。",
   "applyCardTitle": "想进一步了解这个岗位？",
   "applyCardDescription": "把你的背景和求职方向告诉 Siddeley Talent Link，我们会协助你匹配更合适的雇主和申请路径。",
   "contactCta": "联系顾问",

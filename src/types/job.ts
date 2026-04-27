@@ -21,7 +21,9 @@ export type JobContent = {
   intro: string[];
   benefits: string[];
   responsibilities: string[];
+  duties: string[];
   requirements: string[];
+  skillsets: string[];
   note: string;
   noteUrl: string;
   accent: JobAccent;

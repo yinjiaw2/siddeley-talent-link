@@ -19,6 +19,7 @@ type JobDetailsPageProps = {
     responsibilitiesTitle: string;
     requirementsTitle: string;
     noteTitle: string;
+    salaryNote: string;
     applyCardTitle: string;
     applyCardDescription: string;
     contactCta: string;
@@ -33,9 +34,7 @@ type JobDetailsPageProps = {
       hoursLabel: string;
       hoursValue: string;
       skillsetsTitle: string;
-      skillsets: string[];
       dutiesTitle: string;
-      duties: string[];
     };
     meta: {
       publishedAt: string;
@@ -193,6 +192,9 @@ export default function JobDetailsPage({ job, messages }: JobDetailsPageProps) {
                 <p className="mt-3 text-4xl font-extrabold leading-tight" style={fontStyle}>
                   {job.salary}
                 </p>
+                <p className="mt-3 text-sm leading-6 text-slate-300" style={fontStyle}>
+                  {messages.salaryNote}
+                </p>
                 <div className="mt-6 flex flex-wrap gap-2">
                   {[job.location, job.category, job.workType].map((item) => (
                     <span
@@ -228,7 +230,7 @@ export default function JobDetailsPage({ job, messages }: JobDetailsPageProps) {
                 {messages.sharedRole.dutiesTitle}
               </h3>
               <ul className="mt-4 space-y-4 text-base leading-7 text-gray-600" style={fontStyle}>
-                {messages.sharedRole.duties.map((item) => (
+                {job.duties.map((item) => (
                   <li key={item} className="flex gap-3">
                     <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-[#0D1B2A]" />
                     <span>{item}</span>
@@ -282,7 +284,7 @@ export default function JobDetailsPage({ job, messages }: JobDetailsPageProps) {
                     {messages.sharedRole.skillsetsTitle}
                   </h3>
                   <ul className="mt-4 space-y-4 text-base leading-7 text-gray-600" style={fontStyle}>
-                    {messages.sharedRole.skillsets.map((item) => (
+                    {job.skillsets.map((item) => (
                       <li key={item} className="flex gap-3">
                         <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-orange-500" />
                         <span>{item}</span>

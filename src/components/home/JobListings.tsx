@@ -78,6 +78,9 @@ export default function JobListings() {
                     <p className="mt-1 text-sm font-bold text-gray-900">
                       {job.salary}
                     </p>
+                    <p className="mt-1 max-w-[12rem] text-xs leading-5 text-gray-500">
+                      {t("salaryNote")}
+                    </p>
                   </div>
                 </div>
 

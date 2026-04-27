@@ -3,6 +3,7 @@
   "title": "Two priority roles now have full detail pages",
   "description": "These homepage roles now link directly to standalone job detail pages.",
   "amountLabel": "Salary",
+  "salaryNote": "Final salary depends on skills and employer.",
   "cta": "View all jobs",
   "detailsCta": "Job Details"
 }

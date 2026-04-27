@@ -10,7 +10,7 @@
       "location": "Melbourne, VIC",
       "category": "Trades & Services",
       "workType": "Full-time",
-      "salary": "$88,000 - $105,000 AUD",
+      "salary": "$ 70K-170K AUD",
       "publishedAt": "27 April 2026",
       "intro": [
         "This opportunity suits a mechanic who is comfortable working on freight trucks, buses and other heavy commercial vehicles in a fast-moving service environment.",
@@ -28,11 +28,27 @@
         "Complete repairs, testing and adjustments to keep vehicles roadworthy and compliant",
         "Document maintenance activity clearly and communicate repair needs to the wider team"
       ],
+      "duties": [
+        "Vehicle preparation for sale",
+        "Warranty reworks and recall repairs",
+        "Vehicle compliance checking",
+        "Vehicle servicing",
+        "Breakdown repairs",
+        "Advanced electrical and multiplex diagnostics",
+        "Dealer technical support and remote diagnostics over the phone",
+        "Internal technician training"
+      ],
       "requirements": [
         "Experience working on diesel-powered heavy commercial vehicles",
         "Confident mechanical fault-finding and repair skills",
         "Good understanding of workshop safety and roadworthiness expectations",
         "Ability to manage workload efficiently while maintaining repair quality"
+      ],
+      "skillsets": [
+        "Monitor works in progress and ensure compliance with Australian legislation",
+        "Advanced electrical diagnostics, including CAN lines and multiplex systems",
+        "Very good English communication for remote diagnostic assistance with customers and other workshops",
+        "Very good understanding of wiring schematics"
       ],
       "note": "Based on the current VETASSESS-aligned occupation profile for heavy commercial vehicle mechanics.",
       "noteUrl": "https://www.vetassess.com.au/check-my-occupation/trade-occupations/diesel-motor-mechanic-heavy-commercial-vehicle",
@@ -54,7 +70,7 @@
       "location": "Melbourne, VIC",
       "category": "Construction & Mining Support",
       "workType": "Full-time",
-      "salary": "$92,000 - $110,000 AUD",
+      "salary": "$ 70K-170K AUD",
       "publishedAt": "27 April 2026",
       "intro": [
         "This role is ideal for a mechanic who enjoys working across varied plant machinery and can shift confidently between mechanical repair, diagnostics and component rebuild work.",
@@ -67,16 +83,32 @@
         "Strong day-to-day ownership of preventive maintenance quality"
       ],
       "responsibilities": [
-        "Inspect, diagnose and repair diesel engines and mechanical systems on mobile plant equipment",
-        "Carry out rebuilds, replacements and testing for major components and assemblies",
-        "Support preventive maintenance planning to reduce downtime on active equipment",
-        "Record findings accurately and escalate larger repair risks early"
+        "Inspect, diagnose and repair diesel engines and mechanical systems on mobile plant equipment (off-road machinery)",
+        "Carry out rebuilds, replacements and testing for heavy-duty components under high load conditions",
+        "Support preventive maintenance planning for construction and mining equipment to reduce downtime",
+        "Record findings accurately and escalate major mechanical or hydraulic failures"
+      ],
+      "duties": [
+        "Maintenance and servicing of excavators, bulldozers, loaders and mining trucks",
+        "Breakdown repairs in field or site-based environments",
+        "Hydraulic system diagnostics and repairs",
+        "Component rebuilds (engines, transmissions, final drives)",
+        "Advanced electrical and multiplex diagnostics on heavy equipment",
+        "Equipment compliance and operational safety checks (non-road equipment)",
+        "Provide technical support for plant machinery",
+        "Assist in training technicians on heavy equipment systems"
       ],
       "requirements": [
         "Practical experience with mobile plant, heavy equipment or related diesel machinery",
         "Confidence working across complex mechanical and electrical fault scenarios",
         "Ability to read service information and follow structured maintenance processes",
         "Proactive approach to safety, reliability and equipment uptime"
+      ],
+      "skillsets": [
+        "Strong understanding of hydraulic systems and heavy mechanical structures",
+        "Experience working in off-road, construction or mining environments",
+        "Ability to diagnose faults in high-load diesel engines and plant equipment",
+        "Knowledge of safety and maintenance practices for industrial machinery"
       ],
       "note": "Based on the current VETASSESS-aligned occupation profile for mobile plant mechanics.",
       "noteUrl": "https://www.vetassess.com.au/check-my-occupation/trade-occupations/diesel-motor-mechanic-mobile-plant",
