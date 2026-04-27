@@ -110,10 +110,11 @@ export default function JobListings() {
 
                 <div className="mt-6 flex items-center justify-between">
                   <span
-                    className="text-sm font-semibold uppercase tracking-[0.18em] text-orange-500"
+                    className="inline-flex items-center gap-2 rounded-full bg-[#0D1B2A] px-4 py-2 text-sm font-semibold text-white transition-colors group-hover:bg-orange-500"
                     style={{ fontFamily: font }}
                   >
                     {labels.detailsCta}
+                    <ArrowRight size={16} />
                   </span>
                   <span className="flex h-11 w-11 items-center justify-center rounded-full bg-orange-50 text-orange-500 transition-colors group-hover:bg-orange-500 group-hover:text-white">
                     <ArrowRight size={20} />

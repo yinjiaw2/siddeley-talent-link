@@ -230,6 +230,6 @@ export default function JobDetailsPage({ job, labels }: JobDetailsPageProps) {
           </div>
         </section>
       </div>
-    </section>
+    </main>
   );
 }
