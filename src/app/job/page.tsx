@@ -1,3 +1,5 @@
+import JobDetailsPage from "@/components/job-details/JobDetailsPage";
+
 type Props = {
   searchParams: Promise<{ id?: string }>;
 };
@@ -5,5 +7,5 @@ type Props = {
 export default async function JobPage({ searchParams }: Props) {
   const { id } = await searchParams;
 
-  return <div>Job ID: {id}</div>;
+  return <JobDetailsPage jobId={id} />;
 }
