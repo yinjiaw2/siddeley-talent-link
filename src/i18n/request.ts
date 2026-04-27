@@ -6,6 +6,7 @@ import enCoreServices from "../../messages/en/home/coreServices.json";
 import enFaq from "../../messages/en/home/faq.json";
 import enHero from "../../messages/en/home/hero.json";
 import enHomeJobs from "../../messages/en/home/home-jobs.json";
+import enJobDetails from "../../messages/en/job/job-details.json";
 import enNumbers from "../../messages/en/home/numbers.json";
 import enOurTeam from "../../messages/en/home/ourTeam.json";
 import enServiceCards from "../../messages/en/home/serviceCards.json";
@@ -20,6 +21,7 @@ import zhCoreServices from "../../messages/zh-CN/home/coreServices.json";
 import zhFaq from "../../messages/zh-CN/home/faq.json";
 import zhHero from "../../messages/zh-CN/home/hero.json";
 import zhHomeJobs from "../../messages/zh-CN/home/home-jobs.json";
+import zhJobDetails from "../../messages/zh-CN/job/job-details.json";
 import zhNumbers from "../../messages/zh-CN/home/numbers.json";
 import zhOurTeam from "../../messages/zh-CN/home/ourTeam.json";
 import zhServiceCards from "../../messages/zh-CN/home/serviceCards.json";
@@ -42,6 +44,7 @@ const messagesByLocale = {
     header: enHeader,
     hero: enHero,
     homeJobs: enHomeJobs,
+    jobDetails: enJobDetails,
     numbers: enNumbers,
     ourTeam: enOurTeam,
     recruitJobs: enRecruitJobs,
@@ -58,6 +61,7 @@ const messagesByLocale = {
     header: zhHeader,
     hero: zhHero,
     homeJobs: zhHomeJobs,
+    jobDetails: zhJobDetails,
     numbers: zhNumbers,
     ourTeam: zhOurTeam,
     recruitJobs: zhRecruitJobs,

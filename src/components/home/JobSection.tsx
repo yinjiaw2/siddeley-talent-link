@@ -1,13 +1,6 @@
 import Link from "next/link";
 import { getMessages, getTranslations } from "next-intl/server";
-import JobCard from "@/components/home/JobCard";
-
-type Job = {
-  id: string;
-  title: string;
-  description: string;
-  amount: string;
-};
+import { JobCarousel, type Job } from "@/components/home/JobCard";
 
 const fontStyle = {
   fontFamily: "var(--font-app-sans), Arial, Helvetica, sans-serif",
@@ -52,18 +45,7 @@ export default async function JobSection() {
           </Link>
         </div>
 
-        <div className="mt-12 flex flex-row gap-6">
-          {jobs.map((job) => (
-            <JobCard
-              key={job.id}
-              id={job.id}
-              title={job.title}
-              description={job.description}
-              amount={job.amount}
-              amountLabel={t("amountLabel")}
-            />
-          ))}
-        </div>
+        <JobCarousel jobs={jobs} amountLabel={t("amountLabel")} />
       </div>
     </section>
   );
