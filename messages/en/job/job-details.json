@@ -6,7 +6,7 @@
   "benefitsTitle": "What's in it for you?",
   "responsibilitiesTitle": "What will you do?",
   "requirementsTitle": "What do you need?",
-  "noteTitle": "Role Context",
+  "noteTitle": "More information",
   "meta": {
     "publishedAt": "Published",
     "location": "Location",
@@ -18,9 +18,9 @@
   "contactCta": "Contact us",
   "vetassessCta": "View VETASSESS occupation profile",
   "sharedRole": {
-    "title": "Shared Role Requirements",
+    "title": "Employer Requirements",
     "intro": "We are looking for an Australian heavy vehicle mechanic qualified with advanced electrical and electronic diagnostic experience.",
-    "qualificationLabel": "Minimum qualification",
+    "qualificationLabel": "Certification requirement",
     "qualificationValue": "AUR31112 Certificate III in Heavy Commercial Vehicle Mechanical Technology",
     "experienceLabel": "Minimum experience",
     "experienceValue": "6+ years of experience",

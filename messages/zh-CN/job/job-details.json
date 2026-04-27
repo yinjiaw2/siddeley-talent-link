@@ -6,7 +6,7 @@
   "benefitsTitle": "这个岗位能带来什么？",
   "responsibilitiesTitle": "你将负责什么？",
   "requirementsTitle": "我们希望你具备什么？",
-  "noteTitle": "岗位说明",
+  "noteTitle": "更多信息",
   "meta": {
     "publishedAt": "发布时间",
     "location": "工作地点",
@@ -18,9 +18,9 @@
   "contactCta": "联系顾问",
   "vetassessCta": "查看 VETASSESS 职业说明",
   "sharedRole": {
-    "title": "共用岗位要求",
+    "title": "雇主要求",
     "intro": "我们正在寻找具备高级电气与电子诊断经验的澳洲重型车辆维修技师。",
-    "qualificationLabel": "最低学历要求",
+    "qualificationLabel": "证书要求",
     "qualificationValue": "AUR31112 重型商用车辆机械技术三级证书",
     "experienceLabel": "最低经验要求",
     "experienceValue": "6年以上相关经验",

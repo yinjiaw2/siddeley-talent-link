@@ -5,7 +5,6 @@ import {
   BriefcaseBusiness,
   CalendarDays,
   MapPin,
-  Wallet,
 } from "lucide-react";
 import type { JobContent } from "@/types/job";
 
@@ -70,11 +69,6 @@ export default function JobDetailsPage({ job, messages }: JobDetailsPageProps) {
       label: messages.meta.category,
       value: job.category,
     },
-    {
-      icon: Wallet,
-      label: messages.meta.salary,
-      value: job.salary,
-    },
   ];
 
   return (
@@ -137,6 +131,20 @@ export default function JobDetailsPage({ job, messages }: JobDetailsPageProps) {
                 <p className="mt-3 text-base leading-8 text-slate-100" style={fontStyle}>
                   {job.summary}
                 </p>
+                <div className="mt-6 border-t border-white/10 pt-5">
+                  <p
+                    className="text-xs font-semibold uppercase tracking-[0.22em] text-orange-200"
+                    style={fontStyle}
+                  >
+                    {messages.sharedRole.qualificationLabel}
+                  </p>
+                  <p
+                    className="mt-2 text-base font-extrabold leading-7 text-white"
+                    style={fontStyle}
+                  >
+                    {messages.sharedRole.qualificationValue}
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -176,45 +184,53 @@ export default function JobDetailsPage({ job, messages }: JobDetailsPageProps) {
               </div>
 
               <div className="mt-8 rounded-[1.75rem] bg-[#0D1B2A] p-6 text-white">
-                <p className="text-2xl font-extrabold" style={fontStyle}>
-                  {messages.applyCardTitle}
-                </p>
-                <p className="mt-3 text-sm leading-7 text-slate-300" style={fontStyle}>
-                  {messages.applyCardDescription}
-                </p>
-                <Link
-                  href="/#contact"
-                  className="mt-6 inline-flex items-center gap-2 rounded-full bg-orange-500 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-orange-600"
+                <p
+                  className="text-xs font-semibold uppercase tracking-[0.22em] text-orange-300"
                   style={fontStyle}
                 >
-                  {messages.contactCta}
-                  <ArrowRight size={16} />
-                </Link>
+                  {messages.meta.salary}
+                </p>
+                <p className="mt-3 text-4xl font-extrabold leading-tight" style={fontStyle}>
+                  {job.salary}
+                </p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {[job.location, job.category, job.workType].map((item) => (
+                    <span
+                      key={`hero-salary-${item}`}
+                      className="rounded-full bg-white/10 px-3 py-2 text-xs font-semibold tracking-[0.08em] text-slate-100"
+                      style={fontStyle}
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </div>
             </aside>
           </div>
         </section>
 
-        <section className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)]">
-          <article className="rounded-[2rem] bg-white p-8 shadow-[0_20px_70px_rgba(15,23,42,0.06)] md:p-10">
+        <section className="mt-8 grid items-stretch gap-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
+          <article className="h-full rounded-[2rem] bg-white p-8 shadow-[0_20px_70px_rgba(15,23,42,0.06)] md:p-10">
             <h2 className={sectionTitleClass} style={fontStyle}>
-              {messages.summaryTitle}
+              {messages.responsibilitiesTitle}
             </h2>
-
-            <div className="mt-5 space-y-5 text-base leading-8 text-gray-600" style={fontStyle}>
-              {job.intro.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
+            <ul className="mt-5 space-y-4 text-base leading-7 text-gray-600" style={fontStyle}>
+              {job.responsibilities.map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-orange-500" />
+                  <span>{item}</span>
+                </li>
               ))}
-            </div>
+            </ul>
 
-            <div className="mt-10">
-              <h3 className={sectionTitleClass} style={fontStyle}>
-                {messages.responsibilitiesTitle}
+            <div className="mt-8 border-t border-gray-100 pt-8">
+              <h3 className="text-xl font-extrabold text-[#0D1B2A]" style={fontStyle}>
+                {messages.sharedRole.dutiesTitle}
               </h3>
-              <ul className="mt-5 space-y-4 text-base leading-7 text-gray-600" style={fontStyle}>
-                {job.responsibilities.map((item) => (
+              <ul className="mt-4 space-y-4 text-base leading-7 text-gray-600" style={fontStyle}>
+                {messages.sharedRole.duties.map((item) => (
                   <li key={item} className="flex gap-3">
-                    <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-orange-500" />
+                    <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-[#0D1B2A]" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -222,128 +238,99 @@ export default function JobDetailsPage({ job, messages }: JobDetailsPageProps) {
             </div>
           </article>
 
-          <div className="space-y-8">
+          <div className="grid gap-8">
             <article className="rounded-[2rem] bg-white p-8 shadow-[0_20px_70px_rgba(15,23,42,0.06)] md:p-10">
-              <h2 className={sectionTitleClass} style={fontStyle}>
-                {messages.benefitsTitle}
-              </h2>
-              <ul className="mt-5 space-y-4 text-base leading-7 text-gray-600" style={fontStyle}>
-                {job.benefits.map((item) => (
-                  <li key={item} className="flex gap-3">
-                    <span
-                      className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-bold"
-                      style={{
-                        backgroundColor: job.accent.softBg,
-                        color: job.accent.softText,
-                      }}
-                    >
-                      +
-                    </span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
+              <div>
+                <h3 className="text-xl font-extrabold text-[#0D1B2A]" style={fontStyle}>
+                  {messages.sharedRole.title}
+                </h3>
+                <p className="mt-4 text-base leading-8 text-gray-600" style={fontStyle}>
+                  {messages.sharedRole.intro}
+                </p>
 
-            <article className="rounded-[2rem] bg-white p-8 shadow-[0_20px_70px_rgba(15,23,42,0.06)] md:p-10">
-              <h2 className={sectionTitleClass} style={fontStyle}>
-                {messages.requirementsTitle}
-              </h2>
-              <ul className="mt-5 space-y-4 text-base leading-7 text-gray-600" style={fontStyle}>
-                {job.requirements.map((item) => (
-                  <li key={item} className="flex gap-3">
-                    <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-[#0D1B2A]" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
+                <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                  <div className="rounded-[1.4rem] bg-[#F8F5F0] p-5">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gray-400" style={fontStyle}>
+                      {messages.sharedRole.qualificationLabel}
+                    </p>
+                    <p className="mt-2 text-sm font-semibold leading-6 text-[#0D1B2A]" style={fontStyle}>
+                      {messages.sharedRole.qualificationValue}
+                    </p>
+                  </div>
 
-            <article className="rounded-[2rem] bg-white p-8 shadow-[0_20px_70px_rgba(15,23,42,0.06)] md:p-10">
-              <h2 className={sectionTitleClass} style={fontStyle}>
-                {messages.sharedRole.title}
-              </h2>
-              <p className="mt-4 text-base leading-8 text-gray-600" style={fontStyle}>
-                {messages.sharedRole.intro}
-              </p>
+                  <div className="rounded-[1.4rem] bg-[#F8F5F0] p-5">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gray-400" style={fontStyle}>
+                      {messages.sharedRole.experienceLabel}
+                    </p>
+                    <p className="mt-2 text-sm font-semibold leading-6 text-[#0D1B2A]" style={fontStyle}>
+                      {messages.sharedRole.experienceValue}
+                    </p>
+                  </div>
+                </div>
 
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-[1.4rem] bg-[#F8F5F0] p-5">
+                <div className="mt-4 rounded-[1.4rem] bg-[#F8F5F0] p-5">
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gray-400" style={fontStyle}>
-                    {messages.sharedRole.qualificationLabel}
+                    {messages.sharedRole.hoursLabel}
                   </p>
                   <p className="mt-2 text-sm font-semibold leading-6 text-[#0D1B2A]" style={fontStyle}>
-                    {messages.sharedRole.qualificationValue}
+                    {messages.sharedRole.hoursValue}
                   </p>
                 </div>
 
-                <div className="rounded-[1.4rem] bg-[#F8F5F0] p-5">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gray-400" style={fontStyle}>
-                    {messages.sharedRole.experienceLabel}
-                  </p>
-                  <p className="mt-2 text-sm font-semibold leading-6 text-[#0D1B2A]" style={fontStyle}>
-                    {messages.sharedRole.experienceValue}
-                  </p>
+                <div className="mt-8">
+                  <h3 className="text-xl font-extrabold text-[#0D1B2A]" style={fontStyle}>
+                    {messages.sharedRole.skillsetsTitle}
+                  </h3>
+                  <ul className="mt-4 space-y-4 text-base leading-7 text-gray-600" style={fontStyle}>
+                    {messages.sharedRole.skillsets.map((item) => (
+                      <li key={item} className="flex gap-3">
+                        <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-orange-500" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-
-              <div className="mt-4 rounded-[1.4rem] bg-[#F8F5F0] p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gray-400" style={fontStyle}>
-                  {messages.sharedRole.hoursLabel}
-                </p>
-                <p className="mt-2 text-sm font-semibold leading-6 text-[#0D1B2A]" style={fontStyle}>
-                  {messages.sharedRole.hoursValue}
-                </p>
-              </div>
-
-              <div className="mt-8">
-                <h3 className="text-xl font-extrabold text-[#0D1B2A]" style={fontStyle}>
-                  {messages.sharedRole.skillsetsTitle}
-                </h3>
-                <ul className="mt-4 space-y-4 text-base leading-7 text-gray-600" style={fontStyle}>
-                  {messages.sharedRole.skillsets.map((item) => (
-                    <li key={item} className="flex gap-3">
-                      <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-orange-500" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="mt-8">
-                <h3 className="text-xl font-extrabold text-[#0D1B2A]" style={fontStyle}>
-                  {messages.sharedRole.dutiesTitle}
-                </h3>
-                <ul className="mt-4 space-y-4 text-base leading-7 text-gray-600" style={fontStyle}>
-                  {messages.sharedRole.duties.map((item) => (
-                    <li key={item} className="flex gap-3">
-                      <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-[#0D1B2A]" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </article>
-
-            <article className="rounded-[2rem] border border-dashed border-orange-200 bg-orange-50/60 p-8 md:p-10">
-              <h2 className={sectionTitleClass} style={fontStyle}>
-                {messages.noteTitle}
-              </h2>
-              <p className="mt-4 text-base leading-8 text-gray-600" style={fontStyle}>
-                {job.note}
-              </p>
-              <Link
-                href={job.noteUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-5 inline-flex items-center gap-2 rounded-full border border-orange-300 bg-white px-5 py-3 text-sm font-semibold text-orange-600 transition-colors hover:bg-orange-500 hover:text-white"
-                style={fontStyle}
-              >
-                {messages.vetassessCta}
-                <ArrowRight size={16} />
-              </Link>
             </article>
           </div>
+        </section>
+
+        <section className="mt-8 grid items-stretch gap-8 lg:grid-cols-2">
+          <article className="rounded-[2rem] bg-[#0D1B2A] p-8 text-white shadow-[0_20px_70px_rgba(15,23,42,0.14)] md:p-10">
+            <p className="text-2xl font-extrabold" style={fontStyle}>
+              {messages.applyCardTitle}
+            </p>
+            <p className="mt-3 text-sm leading-7 text-slate-300" style={fontStyle}>
+              {messages.applyCardDescription}
+            </p>
+            <Link
+              href="/#contact"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-orange-500 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-orange-600"
+              style={fontStyle}
+            >
+              {messages.contactCta}
+              <ArrowRight size={16} />
+            </Link>
+          </article>
+
+          <article className="rounded-[2rem] border border-dashed border-orange-200 bg-orange-50/60 p-8 md:p-10">
+            <h2 className={sectionTitleClass} style={fontStyle}>
+              {messages.noteTitle}
+            </h2>
+            <p className="mt-4 text-base leading-8 text-gray-600" style={fontStyle}>
+              {job.note}
+            </p>
+            <Link
+              href={job.noteUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-5 inline-flex items-center gap-2 rounded-full border border-orange-300 bg-white px-5 py-3 text-sm font-semibold text-orange-600 transition-colors hover:bg-orange-500 hover:text-white"
+              style={fontStyle}
+            >
+              {messages.vetassessCta}
+              <ArrowRight size={16} />
+            </Link>
+          </article>
         </section>
       </div>
     </main>
