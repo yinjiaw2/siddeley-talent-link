@@ -32,19 +32,29 @@ export default function JobListings() {
       className="w-full overflow-hidden bg-[radial-gradient(circle_at_top_left,#ffe7cc_0%,#fff7ef_26%,#ffffff_58%,#fffaf5_100%)] py-24 scroll-mt-16"
     >
       <div className="mx-auto mb-14 max-w-6xl px-6">
-        <div className="max-w-4xl">
-          <p
-            className="mb-4 text-sm font-semibold uppercase tracking-[0.32em] text-orange-500"
+        <div className="flex flex-col gap-6 xl:flex-row xl:items-end xl:justify-between">
+          <div className="max-w-4xl">
+            <p
+              className="mb-4 text-sm font-semibold uppercase tracking-[0.32em] text-orange-500"
+              style={{ fontFamily: font }}
+            >
+              {t("label")}
+            </p>
+            <h2
+              className="text-4xl font-extrabold leading-tight text-gray-900 md:text-6xl"
+              style={{ fontFamily: font, letterSpacing: "-0.03em" }}
+            >
+              {t("title")}
+            </h2>
+          </div>
+
+          <Link
+            href="/#jobs"
+            className="inline-flex w-fit self-start rounded-full border border-[#0D1B2A] bg-white px-6 py-3 text-sm font-semibold text-[#0D1B2A] transition-colors hover:border-[#FB8C00] hover:bg-[#FB8C00] hover:text-[#0D1B2A] xl:self-end"
             style={{ fontFamily: font }}
           >
-            {t("label")}
-          </p>
-          <h2
-            className="text-4xl font-extrabold leading-tight text-gray-900 md:text-6xl"
-            style={{ fontFamily: font, letterSpacing: "-0.03em" }}
-          >
-            {t("title")}
-          </h2>
+            {t("cta")}
+          </Link>
         </div>
       </div>
 
@@ -170,16 +180,6 @@ export default function JobListings() {
           >
             <ChevronRight size={20} />
           </button>
-        </div>
-
-        <div className="mt-10 flex justify-center xl:justify-start">
-          <Link
-            href="/#jobs"
-            className="inline-flex rounded-full border border-[#0D1B2A]/12 bg-white px-6 py-3 text-sm font-semibold text-[#0D1B2A] transition-colors hover:border-orange-300 hover:text-orange-600"
-            style={{ fontFamily: font }}
-          >
-            {t("cta")}
-          </Link>
         </div>
       </div>
     </section>

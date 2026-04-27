@@ -232,10 +232,10 @@ export default function JobDetailsPage({ job, messages }: JobDetailsPageProps) {
               <ul className="mt-4 space-y-4 text-base leading-7 text-gray-600" style={fontStyle}>
                 {job.duties.map((item) => (
                   <li key={item} className="flex gap-3">
-                    <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-[#0D1B2A]" />
-                    <span>{item}</span>
-                  </li>
-                ))}
+                  <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-[#0D1B2A]" />
+                  <span>{item}</span>
+                </li>
+              ))}
               </ul>
             </div>
           </article>
