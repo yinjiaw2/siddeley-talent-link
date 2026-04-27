@@ -1,7 +1,8 @@
 {
-  "label": "Open Roles",
-  "title": "Explore current opportunities",
-  "description": "Browse a small selection of active roles from our recruitment desk and move directly into the hiring process with local guidance.",
-  "amountLabel": "Package",
-  "cta": "See all jobs"
+  "label": "Job Opportunities",
+  "title": "Two priority roles now have full detail pages",
+  "description": "These homepage roles now link directly to standalone job detail pages.",
+  "amountLabel": "Salary",
+  "cta": "View all jobs",
+  "detailsCta": "Job Details"
 }

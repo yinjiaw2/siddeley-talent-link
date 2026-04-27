@@ -1,0 +1,92 @@
+{
+  "jobs": [
+    {
+      "id": "1",
+      "slug": "diesel-motor-mechanic-heavy-commercial-vehicle",
+      "title": "Diesel Motor Mechanic (Heavy Commercial Vehicle)",
+      "anzsco": "321212",
+      "summary": "Support commercial fleets by maintaining, diagnosing and repairing diesel-powered heavy vehicles across workshop and roadworthy compliance requirements.",
+      "cardDescription": "Maintain, test and repair heavy road transport equipment including freight trucks and passenger buses.",
+      "location": "Melbourne, VIC",
+      "category": "Trades & Services",
+      "workType": "Full-time",
+      "salary": "$88,000 - $105,000 AUD",
+      "publishedAt": "27 April 2026",
+      "intro": [
+        "This opportunity suits a mechanic who is comfortable working on freight trucks, buses and other heavy commercial vehicles in a fast-moving service environment.",
+        "The role is focused on strong diagnostic work, scheduled servicing and dependable repair quality so vehicles can return to the road safely and quickly."
+      ],
+      "benefits": [
+        "Stable full-time workshop pipeline with clear heavy-vehicle specialisation",
+        "Hands-on exposure to engine, transmission, steering and braking systems",
+        "Opportunity to build roadworthy inspection and compliance experience",
+        "Supportive environment for mechanics who want to deepen fault-finding capability"
+      ],
+      "responsibilities": [
+        "Diagnose faults across diesel engines, drivetrains, steering and suspension systems",
+        "Perform scheduled servicing, tune-ups and preventive maintenance on heavy vehicles",
+        "Complete repairs, testing and adjustments to keep vehicles roadworthy and compliant",
+        "Document maintenance activity clearly and communicate repair needs to the wider team"
+      ],
+      "requirements": [
+        "Experience working on diesel-powered heavy commercial vehicles",
+        "Confident mechanical fault-finding and repair skills",
+        "Good understanding of workshop safety and roadworthiness expectations",
+        "Ability to manage workload efficiently while maintaining repair quality"
+      ],
+      "note": "Based on the current VETASSESS-aligned occupation profile for heavy commercial vehicle mechanics.",
+      "noteUrl": "https://www.vetassess.com.au/check-my-occupation/trade-occupations/diesel-motor-mechanic-heavy-commercial-vehicle",
+      "accent": {
+        "softBg": "#FFF1E8",
+        "softText": "#C2410C",
+        "softBorder": "#FDBA74",
+        "chipBg": "#FFF7ED",
+        "chipText": "#9A3412"
+      }
+    },
+    {
+      "id": "2",
+      "slug": "diesel-motor-mechanic-mobile-plant",
+      "title": "Diesel Motor Mechanic (Mobile Plant)",
+      "anzsco": "321212",
+      "summary": "Maintain and rebuild diesel-powered mobile plant equipment used across construction, mining and industrial sites, with a strong focus on reliability and preventive maintenance.",
+      "cardDescription": "Maintain, test and repair mobile plant equipment such as loaders, excavators, graders, cranes and haul trucks.",
+      "location": "Melbourne, VIC",
+      "category": "Construction & Mining Support",
+      "workType": "Full-time",
+      "salary": "$92,000 - $110,000 AUD",
+      "publishedAt": "27 April 2026",
+      "intro": [
+        "This role is ideal for a mechanic who enjoys working across varied plant machinery and can shift confidently between mechanical repair, diagnostics and component rebuild work.",
+        "You will help keep site-critical equipment available, safe and performance-ready across both scheduled maintenance and breakdown response."
+      ],
+      "benefits": [
+        "Broad exposure to high-value plant and machinery platforms",
+        "Technical variety across hydraulic, mechanical and diesel systems",
+        "Long-term pathway for mechanics with construction or mining equipment interest",
+        "Strong day-to-day ownership of preventive maintenance quality"
+      ],
+      "responsibilities": [
+        "Inspect, diagnose and repair diesel engines and mechanical systems on mobile plant equipment",
+        "Carry out rebuilds, replacements and testing for major components and assemblies",
+        "Support preventive maintenance planning to reduce downtime on active equipment",
+        "Record findings accurately and escalate larger repair risks early"
+      ],
+      "requirements": [
+        "Practical experience with mobile plant, heavy equipment or related diesel machinery",
+        "Confidence working across complex mechanical and electrical fault scenarios",
+        "Ability to read service information and follow structured maintenance processes",
+        "Proactive approach to safety, reliability and equipment uptime"
+      ],
+      "note": "Based on the current VETASSESS-aligned occupation profile for mobile plant mechanics.",
+      "noteUrl": "https://www.vetassess.com.au/check-my-occupation/trade-occupations/diesel-motor-mechanic-mobile-plant",
+      "accent": {
+        "softBg": "#ECFDF5",
+        "softText": "#047857",
+        "softBorder": "#86EFAC",
+        "chipBg": "#F0FDF4",
+        "chipText": "#166534"
+      }
+    }
+  ]
+}

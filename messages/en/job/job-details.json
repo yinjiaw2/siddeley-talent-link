@@ -1,6 +1,48 @@
 {
-  "amountLabel": "Salary",
-  "backLabel": "Back to jobs",
-  "descriptionLabel": "Role overview",
-  "eyebrow": "Open Position"
+  "backLabel": "Back to home page",
+  "heroEyebrow": "Current Opportunity",
+  "summaryTitle": "Job Summary",
+  "summaryLabel": "Overview",
+  "benefitsTitle": "What's in it for you?",
+  "responsibilitiesTitle": "What will you do?",
+  "requirementsTitle": "What do you need?",
+  "noteTitle": "Role Context",
+  "meta": {
+    "publishedAt": "Published",
+    "location": "Location",
+    "category": "Category",
+    "salary": "Salary"
+  },
+  "applyCardTitle": "Ready to discuss this role?",
+  "applyCardDescription": "Share your background with Siddeley Talent Link and we will help match you to the right employer pathway.",
+  "contactCta": "Contact us",
+  "vetassessCta": "View VETASSESS occupation profile",
+  "sharedRole": {
+    "title": "Shared Role Requirements",
+    "intro": "We are looking for an Australian heavy vehicle mechanic qualified with advanced electrical and electronic diagnostic experience.",
+    "qualificationLabel": "Minimum qualification",
+    "qualificationValue": "AUR31112 Certificate III in Heavy Commercial Vehicle Mechanical Technology",
+    "experienceLabel": "Minimum experience",
+    "experienceValue": "6+ years of experience",
+    "hoursLabel": "Work hours",
+    "hoursValue": "8:30am to 4:30pm, Monday to Friday",
+    "skillsetsTitle": "Skillsets acquired",
+    "skillsets": [
+      "Monitor works in progress and ensure compliance with Australian legislation",
+      "Advanced electrical diagnostics, including CAN lines and multiplex systems",
+      "Very good English communication for remote diagnostic assistance with customers and other workshops",
+      "Very good understanding of wiring schematics"
+    ],
+    "dutiesTitle": "Duties",
+    "duties": [
+      "Vehicle preparation for sale",
+      "Warranty reworks and recall repairs",
+      "Vehicle compliance checking",
+      "Vehicle servicing",
+      "Breakdown repairs",
+      "Advanced electrical and multiplex diagnostics",
+      "Dealer technical support and remote diagnostics over the phone",
+      "Internal technician training"
+    ]
+  }
 }

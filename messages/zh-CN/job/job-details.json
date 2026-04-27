@@ -1,6 +1,48 @@
 {
-  "amountLabel": "薪资",
-  "backLabel": "返回职位列表",
-  "descriptionLabel": "职位概览",
-  "eyebrow": "招聘职位"
+  "backLabel": "返回首页",
+  "heroEyebrow": "当前开放职位",
+  "summaryTitle": "职位概述",
+  "summaryLabel": "岗位信息",
+  "benefitsTitle": "这个岗位能带来什么？",
+  "responsibilitiesTitle": "你将负责什么？",
+  "requirementsTitle": "我们希望你具备什么？",
+  "noteTitle": "岗位说明",
+  "meta": {
+    "publishedAt": "发布时间",
+    "location": "工作地点",
+    "category": "岗位类别",
+    "salary": "薪资待遇"
+  },
+  "applyCardTitle": "想进一步了解这个岗位？",
+  "applyCardDescription": "把你的背景和求职方向告诉 Siddeley Talent Link，我们会协助你匹配更合适的雇主和申请路径。",
+  "contactCta": "联系顾问",
+  "vetassessCta": "查看 VETASSESS 职业说明",
+  "sharedRole": {
+    "title": "共用岗位要求",
+    "intro": "我们正在寻找具备高级电气与电子诊断经验的澳洲重型车辆维修技师。",
+    "qualificationLabel": "最低学历要求",
+    "qualificationValue": "AUR31112 重型商用车辆机械技术三级证书",
+    "experienceLabel": "最低经验要求",
+    "experienceValue": "6年以上相关经验",
+    "hoursLabel": "工作时间",
+    "hoursValue": "周一至周五，上午8:30至下午4:30",
+    "skillsetsTitle": "所需技能",
+    "skillsets": [
+      "能够跟进在修车辆进度，并确保符合澳洲相关法规要求",
+      "具备高级电气诊断能力，包括 CAN 总线与多路复用系统",
+      "英语沟通能力强，能够为客户及其他维修车间提供远程诊断支持",
+      "熟练理解车辆电路与接线原理图"
+    ],
+    "dutiesTitle": "岗位职责",
+    "duties": [
+      "车辆交付销售前准备",
+      "保修返修及召回维修",
+      "车辆合规检查",
+      "车辆保养服务",
+      "故障抢修",
+      "高级电气与多路复用系统诊断",
+      "经销商技术支持及电话远程诊断",
+      "内部技术人员培训"
+    ]
+  }
 }

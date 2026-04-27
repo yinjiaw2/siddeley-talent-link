@@ -1,4 +1,6 @@
-import JobDetailsPage from "@/components/job-details/JobDetailsPage";
+import { redirect } from "next/navigation";
+import { getMessages } from "next-intl/server";
+import type { JobContent } from "@/types/job";
 
 type Props = {
   searchParams: Promise<{ id?: string }>;
@@ -6,10 +8,16 @@ type Props = {
 
 export default async function JobPage({ searchParams }: Props) {
   const { id } = await searchParams;
+  const messages = await getMessages();
+  const jobs = (messages.jobContent as { jobs: JobContent[] }).jobs;
 
-  if (!id) {
-    return <p>Job ID is missing.</p>;
+  if (id) {
+    const slug = jobs.find((job) => job.id === id)?.slug;
+
+    if (slug) {
+      redirect(`/jobs/${slug}`);
+    }
   }
 
-  return <JobDetailsPage jobId={id} />;
+  redirect("/#job-listings");
 }

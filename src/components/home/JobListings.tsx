@@ -3,15 +3,15 @@
 import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
-import { useLocale } from "next-intl";
-import { getHomeJobLabels, getHomeJobs } from "@/lib/homeJobs";
+import { useMessages, useTranslations } from "next-intl";
+import type { JobContent } from "@/types/job";
 
 const font = "var(--font-app-sans), Arial, Helvetica, sans-serif";
 
 export default function JobListings() {
-  const locale = useLocale();
-  const labels = getHomeJobLabels(locale);
-  const jobs = getHomeJobs(locale);
+  const t = useTranslations("homeJobs");
+  const messages = useMessages();
+  const jobs = (messages.jobContent as { jobs: JobContent[] }).jobs;
   const cardGroups =
     jobs.length >= 2 ? [jobs, [jobs[1], jobs[0]]] : [jobs];
 
@@ -37,13 +37,13 @@ export default function JobListings() {
             className="mb-4 text-sm font-semibold uppercase tracking-[0.32em] text-orange-500"
             style={{ fontFamily: font }}
           >
-            {labels.sectionEyebrow}
+            {t("label")}
           </p>
           <h2
             className="text-4xl font-extrabold leading-tight text-gray-900 md:text-6xl"
             style={{ fontFamily: font, letterSpacing: "-0.03em" }}
           >
-            {labels.sectionTitle}
+            {t("title")}
           </h2>
         </div>
       </div>
@@ -73,7 +73,7 @@ export default function JobListings() {
                   </div>
                   <div className="text-right">
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gray-400">
-                      {labels.meta.salary}
+                      {t("amountLabel")}
                     </p>
                     <p className="mt-1 text-sm font-bold text-gray-900">
                       {job.salary}
@@ -113,7 +113,7 @@ export default function JobListings() {
                     className="inline-flex items-center gap-2 rounded-full bg-[#0D1B2A] px-4 py-2 text-sm font-semibold text-white transition-colors group-hover:bg-orange-500"
                     style={{ fontFamily: font }}
                   >
-                    {labels.detailsCta}
+                    {t("detailsCta")}
                     <ArrowRight size={16} />
                   </span>
                   <span className="flex h-11 w-11 items-center justify-center rounded-full bg-orange-50 text-orange-500 transition-colors group-hover:bg-orange-500 group-hover:text-white">
@@ -171,11 +171,11 @@ export default function JobListings() {
 
         <div className="mt-10 flex justify-center xl:justify-start">
           <Link
-            href="/services/recruit"
+            href="/#jobs"
             className="inline-flex rounded-full border border-[#0D1B2A]/12 bg-white px-6 py-3 text-sm font-semibold text-[#0D1B2A] transition-colors hover:border-orange-300 hover:text-orange-600"
             style={{ fontFamily: font }}
           >
-            {labels.browseMore}
+            {t("cta")}
           </Link>
         </div>
       </div>
